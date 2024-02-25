@@ -12,7 +12,7 @@ function App ()
   }
   async function auth ()
   {
-    const response = await fetch( 'http://127.0.0.1:3000/request', { method: 'post' } );
+    const response = await fetch( 'https://oauth2-0-consent-screens-backend.onrender.com/request', { method: 'post' } );
     const data = await response.json();
     navigate(data.url)
   }

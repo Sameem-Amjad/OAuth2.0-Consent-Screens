@@ -7,7 +7,7 @@ const userListing = async ( req, res ) =>
     res.header( "Access-Control-Allow-Origin", 'http://localhost:5173' );
     res.header( "Access-Control-Allow-Credentials", 'true' );
     res.header( "Referrer-Policy", "no-referrer-when-downgrade" );
-    const redirectURL = 'http://127.0.0.1:3000/oauth';
+    const redirectURL = 'https://oauth2-0-consent-screens-backend.onrender.com/oauth';
 
     const oAuth2Client = new OAuth2Client(
         process.env.CLIENT_ID,
