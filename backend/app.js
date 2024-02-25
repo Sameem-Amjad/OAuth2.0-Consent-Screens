@@ -18,13 +18,13 @@ var app = express();
 //   res.status(200);
 //   next();
 // });
-const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-   optionSuccessStatus:200,
-}
+// const corsOptions ={
+//    origin:'*', 
+//    credentials:true,            //access-control-allow-credentials:true
+//    optionSuccessStatus:200,
+// }
 
-app.use(cors(corsOptions))
+app.use(cors())
 
 
 // view engine setup
