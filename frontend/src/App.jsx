@@ -10,7 +10,7 @@ function App ()
   }
   async function auth ()
   {
-    const response = await fetch( 'https://oauth2-0-consent-screens-backend.onrender.com/request', { method: 'post', mode:'no-cors' }, );
+    const response = await fetch( 'https://oauth2-0-consent-screens-backend.onrender.com/request', { method: 'post', mode:'cors' }, );
     const data = await response.json();
     navigate(data.url)
   }
