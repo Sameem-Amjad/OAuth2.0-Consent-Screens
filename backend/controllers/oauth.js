@@ -34,7 +34,7 @@ const getHomePage = async ( req, res, next ) =>
         console.log('Error with signing in with google')
     }
 
-    res.redirect(303, 'https://o-auth2-0-consent-screens.vercel.app//');
+    res.redirect(303, 'https://o-auth2-0-consent-screens.vercel.app');
 };
 
 module.exports = getHomePage;

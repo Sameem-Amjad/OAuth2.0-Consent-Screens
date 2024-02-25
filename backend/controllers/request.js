@@ -4,7 +4,7 @@ const { OAuth2Client } = require( 'google-auth-library' );
 
 const userListing = async ( req, res ) =>
 {
-    res.header( "Access-Control-Allow-Origin", 'https://o-auth2-0-consent-screens.vercel.app/' );
+    res.header( "Access-Control-Allow-Origin", 'https://o-auth2-0-consent-screens.vercel.app' );
     res.header( "Access-Control-Allow-Credentials", 'true' );
     res.header( "Referrer-Policy", "no-referrer-when-downgrade" );
     const redirectURL = 'https://oauth2-0-consent-screens-backend.onrender.com/oauth';
