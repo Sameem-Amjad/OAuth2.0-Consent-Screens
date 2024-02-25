@@ -2,13 +2,14 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var logger = require( 'morgan' );
+var cors = require('cors')
 
 var authRouter = require('./routes/oauth');
 var requestRouter = require('./routes/request');
 
 var app = express();
-
+app.use( cors() );
 app.options('*', function(req, res, next){
   res.header("Access-Control-Allow-Origin", 'https://o-auth2-0-consent-screens.vercel.app/');
   res.header("Access-Control-Allow-Credentials", "true");
