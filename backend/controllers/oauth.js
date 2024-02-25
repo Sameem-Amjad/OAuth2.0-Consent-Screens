@@ -6,14 +6,16 @@ const { use } = require( '../routes/request' );
 async function getUserData ( access_token )
 {
     const response = await fetch( `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${ access_token }` );
-    console.log('response',response);
+    // console.log('response',response);
     const data = await response.json();
-    console.log( data );
+    return data;
+    // console.log( data );
 }
 
 const getHomePage = async ( req, res, next ) =>
 {
     const code = req.query.code;
+    let data = "";
     try
     {
         const redirectUrl = 'https://oauth2-0-consent-screens-backend.onrender.com/oauth';
@@ -27,7 +29,8 @@ const getHomePage = async ( req, res, next ) =>
         console.log( 'Tokens acquired' );
         const user = oAuth2Client.credentials;
         console.log( 'credentials: ', user )
-        await getUserData( user.access_token );
+        data = await getUserData( user.access_token );
+        res.send( data );
     }
     catch ( err )
     {
