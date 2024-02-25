@@ -18,13 +18,14 @@ var app = express();
 //   res.status(200);
 //   next();
 // });
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");  // Temporarily allow all origins
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, credentials");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");  // Temporarily allow all origins
+//   res.setHeader("Access-Control-Allow-Credentials", "true");
+//   res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, credentials");
+//   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+//   next();
+// });
+app.use(cors({ origin: '*' }));
 
 
 // view engine setup
