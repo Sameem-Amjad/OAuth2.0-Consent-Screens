@@ -1,18 +1,16 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import google from './assets/google.png';
 import './App.css';
 
 function App ()
 {
-  const [ count, setCount ] = useState( 0 );
   function navigate ( url )
   {
     window.location.href=url
   }
   async function auth ()
   {
-    const response = await fetch( 'https://oauth2-0-consent-screens-backend.onrender.com/request', { method: 'post' } );
+    const response = await fetch( 'https://oauth2-0-consent-screens-backend.onrender.com/request', { method: 'post', mode:'no-cors' }, );
     const data = await response.json();
     navigate(data.url)
   }
