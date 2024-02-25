@@ -9,7 +9,6 @@ var authRouter = require('./routes/oauth');
 var requestRouter = require('./routes/request');
 
 var app = express();
-// app.use( cors() );
 app.options('*', function(req, res, next){
   res.header("Access-Control-Allow-Origin", 'https://o-auth2-0-consent-screens.vercel.app');
   res.header("Access-Control-Allow-Credentials", "true");
@@ -18,11 +17,6 @@ app.options('*', function(req, res, next){
   res.status(200);
   next();
 });
-// const corsOptions ={
-//    origin:'*', 
-//    credentials:true,            //access-control-allow-credentials:true
-//    optionSuccessStatus:200,
-// }
 
 app.use(cors())
 
