@@ -107,10 +107,6 @@ docs/
 # Ignore coverage output
 coverage/
 
-# Ignore compiled files for TypeScript
-*.js
-*.js.map
-
 # Ignore compiled files for Dart
 *.dart.js
 *.dart.js.map
