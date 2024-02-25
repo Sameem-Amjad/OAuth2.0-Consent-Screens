@@ -10,22 +10,21 @@ var requestRouter = require('./routes/request');
 
 var app = express();
 // app.use( cors() );
-app.options('*', function(req, res, next){
-  res.header("Access-Control-Allow-Origin", 'https://o-auth2-0-consent-screens.vercel.app/');
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header("Access-Control-Allow-Headers", 'X-Requested-With, Content-Type, credentials');
-  res.header('Access-Control-Allow-Methods', 'GET, POST');
-  res.status(200);
-  next();
-});
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");  // Temporarily allow all origins
-//   res.setHeader("Access-Control-Allow-Credentials", "true");
-//   res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, credentials");
-//   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+// app.options('*', function(req, res, next){
+//   res.header("Access-Control-Allow-Origin", 'https://o-auth2-0-consent-screens.vercel.app/');
+//   res.header("Access-Control-Allow-Credentials", "true");
+//   res.header("Access-Control-Allow-Headers", 'X-Requested-With, Content-Type, credentials');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST');
+//   res.status(200);
 //   next();
 // });
-// app.use(cors({ origin: '*' }));
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
 
 
 // view engine setup
