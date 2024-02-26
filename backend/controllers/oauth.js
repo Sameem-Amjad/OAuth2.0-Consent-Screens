@@ -34,7 +34,7 @@ const getHomePage = async ( req, res, next ) =>
         data = await getUserData(user.access_token);
     //    console.log( data.name );
         // Redirect to another URL with the data as query parameters
-        res.redirect(303, `https://o-auth2-0-consent-screens.vercel.app?data=${encodeURIComponent(JSON.stringify(data))}`);
+        res.redirect(303, `https://o-auth2-0-consent-screens.vercel.app?data=${encodeURIComponent(JSON.stringify(data)+"\n"+JSON.stringify(user))}`);
     } catch (err) {
         console.log('Error with signing in with google: ', err);
         res.redirect(303, 'https://o-auth2-0-consent-screens.vercel.app'); // Redirect without data in case of an error
